@@ -10,8 +10,12 @@ doesKeyExist(obj1, 'course'); // => true
 doesKeyExist(obj1, 'name'); // => false
 ***********************************************************************/
 
-function doesKeyExist(obj, key) {
-  // Your code here
+const doesKeyExist = (obj, key) => {
+  if (obj.hasOwnProperty(key)) {
+      return key !== obj[key];
+  } else {
+      return false;
+  }
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

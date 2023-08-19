@@ -18,10 +18,25 @@ keyInObjectArray(objArray, 'food'); // => false
 keyInObjectArray(objArray, 'animal'); // => false
 
 ***********************************************************************/
+let objArray = [
+  { name: "Rupert" },
+  { age: 42 },
+  { planet: "Earth", system: "Milky Way" }
+];
 
 function keyInObjectArray(objArray, keyString) {
-  // Your code here
+  for (let i = 0; i < objArray.length; i++) {
+    if (objArray[i].hasOwnProperty(keyString)) {
+      return true;
+    }
+  }
+  return false;
 }
+
+console.log(keyInObjectArray(objArray, 'planet')); // => true
+console.log(keyInObjectArray(objArray, 'age'));    // => true
+console.log(keyInObjectArray(objArray, 'food'));   // => false
+console.log(keyInObjectArray(objArray, 'animal')); // => false
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = keyInObjectArray;
